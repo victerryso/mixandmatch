@@ -1,0 +1,13 @@
+<h2>Matches</h2>
+<% @users.each do |user| %>
+  <div class='box'>
+    <%= user.firstname %>
+    <%= user.image %>
+    <%= link_to('View Profile', user_path(user)) %>
+  </div>
+<% end %>
+
+<h3><%= @title %></h3>
+<p><%= @current_user.astro.dailyfeed %></p>
+
+<!-- <p><script src="http://l.yimg.com/rt/pps/listbadge_1.8.js">{"pipe_id":"56d38d9e17c3f5969e443e2dc13e5b61","_btype":"list","pipe_params":{"sign":"<%= @current_user.zodiac_sign %>","url":"http:\/\/feeds.astrology.com\/dailyoverview"}}</script> -->
