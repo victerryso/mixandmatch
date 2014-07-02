@@ -5,11 +5,16 @@
 <% end %>
 
 <%= form_tag '/login' do %>
-  <%= label_tag 'email' %>
-  <%= text_field_tag 'email', nil, :autofocus => true %>
+  <p>
+    <%= label_tag 'email' %>
+    <%= text_field_tag 'email', nil, :autofocus => true %>
+  </p>
+  <p>
+    <%= label_tag 'password' %>
+    <%= password_field_tag 'password' %>
+  </p>
 
-  <%= label_tag 'password' %>
-  <%= password_field_tag 'password' %>
-
-  <%= submit_tag 'Login' %>
+  <p>
+    <%= submit_tag 'Login' %>
+  </p>
 <% end %>

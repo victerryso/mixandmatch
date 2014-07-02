@@ -28,9 +28,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    $user = @user
-    @chat1 = Chat.where(:user1_id => @user.id)
-    @chat2 = Chat.where(:user2_id => @user.id)
+    @chat = Chat.where(:user1_id => [@current_user.id, @user.id],
+                       :user2_id => [@current_user.id, @user.id]).first
   end
 
   def update

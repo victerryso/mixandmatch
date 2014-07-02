@@ -1,19 +1,15 @@
 <h2>Chat</h2>
 <h3><%= @user1.firstname %> and <%= @user2.firstname %></h3>
 
-<% @messages.each do |msg| %>
-  <%= msg.username %>: <%= msg.messages %>
-<% end %>
+<div class='chat'>
+  <% @messages.each do |msg| %>
+    <p><%= msg.username %>: <%= msg.messages %></p>
+  <% end %>
 
-<form action="/chats/:id" method="post">
-  <label for="messages"></label>
-  <textarea type="text" rows="3" id="messages" name="messages" placeholder="Post..."></textarea>
+  <form action="/chats/<%=@chat.id%>" method="post">
+    <label for="messages"></label>
+    <textarea type="text" rows="3" id="messages" name="messages" placeholder="Post..."></textarea>
 
-  <button>Send</button>
-</form>
-
-<%= form_for @new do |f| %>
-  <%= f.label :messages %>
-  <%= f.text_field :messages %>
-  <%= f.submit %>
-<% end %>
+    <button>Send</button>
+  </form>
+</div>

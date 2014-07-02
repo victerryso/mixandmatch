@@ -5,11 +5,10 @@
 <p>Hobbies: <%= @user.hobbies %></p>
 <p>About: <%= @user.about %></p>
 <p><%= image_tag(@user.image) %></p>
-<p><%= link_to('Start Chat', new_chat_path) %></p>
-<p><% @chat1.each do |chat| %>
-    <li><%= link_to('Chat with ' + (User.find_by :id => (@chat1.first.user2_id)).firstname, chat_path(chat)) %></li>
-  <% end %>
-  <% @chat2.each do |chat| %>
-    <li><%= link_to('Chat with ' + (User.find_by :id => (@chat2.first.user1_id)).firstname, chat_path(chat)) %></li>
-  <% end %>
-</p>
+
+<% if @chat.present? %>
+  <p><%= link_to('Continue Chat', chat_path(@chat)) %></p>
+<% else %>
+  <p><%= link_to('Start Chatting', new_chat_path(@user.id)) %></p>
+<% end %>
+
