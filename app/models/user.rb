@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
   belongs_to :lunar
   has_and_belongs_to_many :chats
   has_and_belongs_to_many :restaurants
-  validates :email, :presence => true, :length => { :minimum => 2 }, :uniqueness => true
-
+  validates :email, :presence => true, :length => { :minimum => 5 }, :uniqueness => true
+  validates :password_digest, :presence => true, :length => { :minimum => 6 }
+  validates :firstname, :presence => true
+  validates :lastname, :presence => true
+  validates :birthday, :presence => true
+  validates :image, :presence => true
 end

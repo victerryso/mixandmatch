@@ -73,7 +73,18 @@ img {
   margin: 0.25em
 }
 
+.box .top {
+  font-size: 1.25em;
+  width: 10em;
+}
+
 hr {
   width: 50%;
   margin-left: -2%;
+}
+
+label {
+  width: 120px;
+  text-align: left;
+  display: inline-block;
 }

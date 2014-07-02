@@ -6,10 +6,11 @@
   <p>Hobbies: <%= @user.hobbies %></p>
   <p>About: <%= @user.about %></p>
 
-  <% if @chat.present? %>
-    <p><%= link_to('Chat', chat_path(@chat), :class => 'top') %></p>
+  <% if @current_user == @user %>
+  <% elsif @chat.present? %>
+    <p><%= link_to('Continue Chat', chat_path(@chat), :class => 'top') %></p>
   <% else %>
-    <p><%= link_to('Chat', new_chat_path(@user.id), :class => 'top') %></p>
+    <p><%= link_to('Start Chat', new_chat_path(@user.id), :class => 'top') %></p>
   <% end %>
 </div>
 
