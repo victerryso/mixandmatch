@@ -12,49 +12,67 @@
   <p>
     <%= f.label :email %>
     <%= f.email_field :email, :autofocus => true %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
   </p>
 
   <p>
-    <%= f.label :firstname %>
-    <%= f.text_field :firstname %>
-
-    <%= f.label :lastname %>
-    <%= f.text_field :lastname %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
   </p>
 
+  <p>
+    <%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <hr>
+  <p>
+    <%= f.label :firstname, 'First Name' %>
+    <%= f.text_field :firstname %>
+  </p>
+
+  <p>
+    <%= f.label :lastname, 'Surname' %>
+    <%= f.text_field :lastname %>
+  </p>
+  <hr>
   <p>
     <%= f.label :gender %>
     <%= f.select(:gender, ['Male', 'Female']) %>
-
-    <%= f.label :preference %>
-    <%= f.select(:preference, ['Male', 'Female']) %>
-
-    <%= f.label :birthday %>
-    <%= f.date_field :birthday %>
-
-    <%= f.label :suburb %>
-    <%= f.text_field :suburb %>
   </p>
 
   <p>
-    <%= f.label :cuisines %>
-    <%= f.text_field :cuisines%>
-
-    <%= f.label :hobbies %>
-    <%= f.text_field :hobbies %>
-
-    <%= f.label :about %>
-    <%= f.text_field :about %>
-
-    <%= f.label :image %>
-    <%= f.url_field :image %>
+    <%= f.label :preference %>
+    <%= f.select(:preference, ['Male', 'Female']) %>
   </p>
 
+  <p>
+    <%= f.label :birthday, 'Date of Birth' %>
+    <%= f.date_field :birthday %>
+  </p>
+
+  <p>
+    <%= f.label :suburb %>
+    <%= f.text_field :suburb %>
+  </p>
+  <hr>
+  <p>
+    <%= f.label :cuisines, 'Favorite Cuisine' %>
+    <%= f.text_field :cuisines%>
+  </p>
+
+  <p>
+    <%= f.label :hobbies %>
+    <%= f.text_field :hobbies %>
+  </p>
+
+  <p>
+    <%= f.label :about %>
+    <%= f.text_field :about %>
+  </p>
+
+  <p>
+    <%= f.label :image, 'Image URL' %>
+    <%= f.url_field :image %>
+  </p>
+  <hr>
   <%= f.submit %>
 <% end %>

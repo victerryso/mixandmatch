@@ -69,7 +69,6 @@ class UsersController < ApplicationController
   def fortune
     url = "http://pipes.yahoo.com/pipes/pipe.run?_id=56d38d9e17c3f5969e443e2dc13e5b61&_render=json&sign=#{@current_user.zodiac_sign}&url=http%3A%2F%2Ffeeds.astrology.com%2Fdailyoverview"
     response = HTTParty.get(url)
-    @title = response['value']['items'].first['title']
     @current_user.astro.dailyfeed = response['value']['items'].first['description'].split(/<|>/)[2]
   end
 

@@ -6,21 +6,24 @@ def smartnav
     # end
 
     if @current_user.present?
-      links += "<li>"
-      links += link_to('Logout ' + @current_user.firstname, login_path, :data => {:method => :delete, :confirm => 'Logout?'})
-      links += "</li>"
-      links += "<li>"
-      links += link_to('View Profile', user_path(@current_user))
-      links += "</li>"
-      links += "<li>"
-      links += link_to('Edit Profile', edit_user_path(@current_user))
-      links += "</li>"
-      links += "<li>"
-      links += link_to('Delete Profile', @current_user, :data => {:method => :delete, :confirm => 'Delete?'})
-      links += "</li>"
+      links += "<div class='top'>"
+      links += link_to('Home', root_path)
+      links += "</div>"
+      links += "<div class='top'>"
+      links += link_to('Logout', login_path, :data => {:method => :delete, :confirm => 'Logout?'})
+      links += "</div>"
+      links += "<div class='top'>"
+      links += link_to('View', user_path(@current_user))
+      links += "</div>"
+      links += "<div class='top'>"
+      links += link_to('Edit', edit_user_path(@current_user))
+      links += "</div>"
+      links += "<div class='top'>"
+      links += link_to('Delete', @current_user, :data => {:method => :delete, :confirm => 'Delete?'})
+      links += "</div>"
     else
-      links += "<li>#{ link_to('Sign up', new_user_path) }</li>"
-      links += "<li>#{ link_to('Sign in', login_path) }</li>"
+      links += "<div class='top'>#{ link_to('Sign Up', new_user_path) }</div>"
+      links += "<div class='top'>#{ link_to('Sign In', login_path) }</div>"
     end
 
     links
