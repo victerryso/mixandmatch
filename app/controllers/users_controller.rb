@@ -56,7 +56,7 @@ class UsersController < ApplicationController
 
   def compatibility
     preference = @current_user.preference
-    w = Astro.first.id
+    w = Astro.first.id - 1
     x = @current_user.astro_id
     y = w + x + 4; y -= 12 if y > 12
     z = w + x + 8; z -= 12 if z > 12
