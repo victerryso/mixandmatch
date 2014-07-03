@@ -57,8 +57,8 @@ class UsersController < ApplicationController
   def compatibility
     preference = @current_user.preference
     x = @current_user.astro_id
-    y = x + 4; y -= 12 if y > 12
-    z = x + 8; z -= 12 if z > 12
+    y = (x + 4) % 12
+    z = (x + 8) % 12
     User.where(:astro_id => [y, z], :gender => preference)
   end
 
