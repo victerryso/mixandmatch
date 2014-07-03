@@ -9,16 +9,13 @@
 <body>
 
 <div class='container'>
-  <nav>
-    <%== smartnav %>
-</nav>
-<h1>Mix and Match</h1>
+  <nav><%== smartnav %></nav>
+  <h1>Mix and Match</h1>
 
-<% if flash[:notice].present? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+  <% if flash[:notice].present? %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
   <%= yield %>
 
 </div>

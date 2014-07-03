@@ -55,6 +55,12 @@ img {
   max-height: 480px;
 }
 
+.sign {
+  max-height: 96px;
+  max-width: 96px;
+  border: 1px solid black;
+}
+
 .thumb {
   max-height: 192px;
   max-width: 192px;
@@ -87,4 +93,8 @@ label {
   width: 120px;
   text-align: left;
   display: inline-block;
+}
+
+.chat label {
+  width: 0;
 }

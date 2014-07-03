@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/chats/:user_id/new' => 'chats#new', :as => :new_chat
   post '/chats/:id' => 'chats#create'
+  get '/chats/:id/match' => 'chats#match', :as => :match
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

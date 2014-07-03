@@ -1,0 +1,23 @@
+<h2>Match Us</h2>
+
+<% count = 0 %>
+
+<% @restaurants.each do |x, y| %>
+
+  <% if count % 3 == 0 %>
+    <h3><%= @suggestions.shift %></h3>
+  <% end %>
+  <% count += 1 %>
+
+  <div class='box'>
+    <%= x %>
+    <%= y %>
+    <iframe
+      width="250"
+      height="250"
+      frameborder="0" style="border:0"
+      src="<%= "https://www.google.com/maps/embed/v1/search?key=AIzaSyB_OraWh6OvDrPAE_uOoEOEcZStLq-lX_8&q=" + x.gsub(" ", "+").gsub("&", "") %>">
+    </iframe>
+  </div>
+<% end %>
+

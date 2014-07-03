@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   before_action :check_if_logged_in, :except => [:new, :create]
-  # before_action :check_if_admin, :only => [:index]
 
   def index
     @users = compatibility
@@ -28,8 +27,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
-    @chat = Chat.where(:user1_id => [@current_user.id, @user.id],
-                       :user2_id => [@current_user.id, @user.id]).first
+    @chat = Chat.find_by(:user1_id => [@current_user.id, @user.id],
+                         :user2_id => [@current_user.id, @user.id])
   end
 
   def update
@@ -46,6 +45,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :gender, :preference, :birthday, :age, :suburb, :cuisines, :hobbies, :about, :image, :astro_id, :lunar_id)
   end
@@ -71,9 +71,5 @@ class UsersController < ApplicationController
     response = HTTParty.get(url)
     @current_user.astro.dailyfeed = response['value']['items'].first['description'].split(/<|>/)[2]
   end
-
-  # def check_if_admin
-  #   redirect_to(login_path) unless @current_user.is_admin?
-  # end
 
 end

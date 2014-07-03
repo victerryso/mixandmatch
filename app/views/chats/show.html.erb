@@ -1,5 +1,6 @@
 <h2>Chat</h2>
 <h3><%= @user1.firstname %> and <%= @user2.firstname %></h3>
+<div class='top'><%= link_to('Match Us', match_path ) %></div>
 
 <div class='chat'>
   <% @messages.each do |msg| %>
