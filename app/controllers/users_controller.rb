@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token
   before_action :check_if_logged_in, :except => [:new, :create]
 
   def index
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   end
 
   def zodiac
-    Astro.where(:sign => @user.zodiac_sign).first.id
+    Astro.find_by(:sign => @user.zodiac_sign).id if @user.birthday.present?
   end
 
   def fortune

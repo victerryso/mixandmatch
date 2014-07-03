@@ -1,6 +1,5 @@
-<h2>Chat</h2>
-<h3><%= @user1.firstname %> and <%= @user2.firstname %></h3>
-<div class='top'><%= link_to('Match Us', match_path ) %></div>
+<h2>Chat with <%= @user1.firstname %> and <%= @user2.firstname %></h2>
+<div class='match'><%= link_to('Make A Date', match_path ) %></div>
 
 <div class='chat'>
   <% @messages.each do |msg| %>
@@ -9,7 +8,7 @@
 
   <form action="/chats/<%=@chat.id%>" method="post">
     <label for="messages"></label>
-    <textarea type="text" rows="3" id="messages" name="messages" placeholder="Post..."></textarea>
+    <textarea type="text" rows="3" cols='50' id="messages" name="messages" placeholder="Post..."></textarea>
 
     <button>Send</button>
   </form>

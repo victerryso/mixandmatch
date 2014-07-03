@@ -48,26 +48,6 @@ ActiveRecord::Schema.define(version: 20140701065952) do
     t.datetime "updated_at"
   end
 
-  create_table "restaurants", force: true do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "suburb"
-    t.integer  "postcode"
-    t.text     "location"
-    t.string   "cuisine"
-    t.text     "urbanspoon"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "restaurants_users", force: true do |t|
-    t.integer  "restaurant_id"
-    t.integer  "user_id"
-    t.datetime "datetime"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_digest"
