@@ -106,6 +106,10 @@ img {
   margin: 0.25em
 }
 
+.match:hover {
+  background-color: #f5f5f5;
+}
+
 hr {
   width: 50%;
   margin-left: -2%;

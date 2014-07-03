@@ -9,9 +9,9 @@
 
   <% if @current_user == @user %>
   <% elsif @chat.present? %>
-    <p><%= link_to('Continue Chat', chat_path(@chat), :class => 'top') %></p>
+    <p><%= link_to('Continue Chat', chat_path(@chat), :class => 'match') %></p>
   <% else %>
-    <p><%= link_to('Start Chat', new_chat_path(@user.id), :class => 'top') %></p>
+    <p><%= link_to('Start Chat', new_chat_path(@user.id), :class => 'match') %></p>
   <% end %>
 </div>
 
