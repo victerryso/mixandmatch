@@ -4,13 +4,13 @@
 #
 #  id         :integer          not null, primary key
 #  chat_id    :integer
-#  username   :string(255)
-#  messages   :text
+#  user_id    :string(255)
+#  message    :text
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 class Message < ActiveRecord::Base
-  has_and_belongs_to_many :users
-  has_and_belongs_to_many :chats
+  belongs_to :chat
+  belongs_to :user
 end

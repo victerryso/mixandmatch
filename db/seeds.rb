@@ -14,7 +14,7 @@ a7 = Astro.create(:sign => "Cancer", :about => "I'm a crab")
 a8 = Astro.create(:sign => "Leo", :about => "I'm a lion, rawr!")
 a9 = Astro.create(:sign => "Virgo", :about => "I'm a virgin")
 a10 = Astro.create(:sign => "Libra", :about => "I'm scales")
-a11= Astro.create(:sign => "Scorpio", :about => "I'm a scorpion")
+a11 = Astro.create(:sign => "Scorpio", :about => "I'm a scorpion")
 a12 = Astro.create(:sign => "Sagittarius", :about => "I'm a centaur")
 
 Lunar.create(:animal => "Rat", :about => "I'm a rat")

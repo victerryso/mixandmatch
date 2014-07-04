@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
   has_secure_password
   belongs_to :astro
   belongs_to :lunar
-  has_and_belongs_to_many :chats
+  has_many :chats
+  has_many :messages
 
   validates :email, :presence => true, :length => { :minimum => 5 }, :uniqueness => true
   validates :password_digest, :presence => true

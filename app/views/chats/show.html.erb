@@ -2,13 +2,18 @@
 <div class='match'><%= link_to('Make A Date', match_path ) %></div>
 
 <div class='chat'>
+  <table>
   <% @messages.each do |msg| %>
-    <p><%= msg.username %>: <%= msg.messages %></p>
+    <tr>
+      <td><%= msg.created_at.strftime("%r") %></td>
+      <td><%= msg.user.firstname %>: </td>
+      <td><%= msg.message %></td>
   <% end %>
+  </table>
 
   <form action="/chats/<%=@chat.id%>" method="post">
-    <label for="messages"></label>
-    <textarea type="text" rows="3" cols='50' id="messages" name="messages" placeholder="Post..."></textarea>
+    <label for="message"></label>
+    <textarea type="text" rows="3" cols='50' id="message" name="message" placeholder="Post..."></textarea>
 
     <button>Send</button>
   </form>
