@@ -58,8 +58,8 @@ class UsersController < ApplicationController
     preference = @current_user.preference
     w = Astro.first.id - 1
     x = @current_user.astro_id
-    y = w + x + 4; y -= 12 if y > w + 12
-    z = w + x + 8; z -= 12 if z > w + 12
+    y = w + x + 4; y -= 12 if y > (w + 12)
+    z = w + x + 8; z -= 12 if z > (w + 12)
     User.where(:astro_id => [y, z], :gender => preference)
   end
 
