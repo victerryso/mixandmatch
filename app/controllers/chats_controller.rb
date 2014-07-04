@@ -36,7 +36,7 @@ class ChatsController < ApplicationController
     @suggestions = ['Suggested Restaurants', 'Suggested Cafes', 'Suggested Bars']
     @restaurants = {}
       ['food&keyword=' + @current_user.cuisines, 'cafe', 'bar'].map do |type|
-        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=3000&types=" + type + "&key=AIzaSyApiZzmpesIYkG1DcDhlHdXZgZI1hSqICk"
+        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=3000&types=" + type + "&key=AIzaSyDhhlLdPTVdRT0G9N1PTQkXF0rAqMJ5LOk"
         response = HTTParty.get(url)
         if response['results'].present?
           [0, 1, 2].map do |x|
