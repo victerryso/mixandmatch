@@ -37,15 +37,11 @@ class ChatsController < ApplicationController
     @restaurants = {}
 
     ['food&keyword=' + @current_user.cuisines, 'cafe', 'bar'].map do |type|
-      url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=3000&types=" + type + "&key=AIzaSyB_OraWh6OvDrPAE_uOoEOEcZStLq-lX_8"
+      url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=3000&types=" + type + "&key=AIzaSyApiZzmpesIYkG1DcDhlHdXZgZI1hSqICk"
       response = HTTParty.get(url)
-      if response['results']
-        [0, 1, 2].map do |x|
-          y = rand(x * 3..x * 3 + 2)
-          @restaurants[response['results'][y]['name']] = response['results'][y]['vicinity']
-        end
-      else
-        @restaurants = []
+      [0, 1, 2].map do |x|
+        y = rand(x * 3..x * 3 + 2)
+        @restaurants[response['results'][y]['name']] = response['results'][y]['vicinity']
       end
     end
   end
