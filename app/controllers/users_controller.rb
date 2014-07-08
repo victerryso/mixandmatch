@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   before_action :check_if_logged_in, :except => [:new, :create]
 
   def index
-    @users = compatibility
+    @users1 = Chat.where(:user1_id => @current_user.id)
+    @users2 = Chat.where(:user2_id => @current_user.id)
+    @users_all = User.all[0..15]
     fortune
   end
 
@@ -42,6 +44,15 @@ class UsersController < ApplicationController
     user = User.find params[:id]
     user.destroy
     redirect_to root_path
+  end
+
+  def matches
+    @users = compatibility
+    @users_all = User.all[0..15]
+  end
+
+  def all
+    @users = User.all
   end
 
   private

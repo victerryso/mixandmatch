@@ -1,0 +1,15 @@
+<h2>Matches</h2>
+
+<% @users.each do |user| %>
+  <div class='box'>
+    <h3><%= link_to(user.firstname, user_path(user)) %></h3>
+    <%= image_tag(user.image, :class => "thumb") %>
+  </div>
+<% end %>
+
+<div class='box'>
+    <h3><%= link_to('View All', all_path) %></h3>
+    <% @users_all.each do |user| %>
+      <%= image_tag(user.image, :class => "px48") %>
+    <% end %>
+</div>

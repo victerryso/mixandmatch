@@ -1,0 +1,8 @@
+<h2>All</h2>
+
+<% @users.each do |user| %>
+  <div class='box'>
+    <h3><%= link_to(user.firstname, user_path(user)) %></h3>
+    <%= image_tag(user.image, :class => "thumb") %>
+  </div>
+<% end %>

@@ -1,4 +1,4 @@
-<h2>Matches</h2>
+<h2>Home</h2>
 
 <div class='box'>
   <h3>Today's Horoscope</h3>
@@ -6,10 +6,25 @@
   <p><%= @current_user.astro.dailyfeed %></p>
 </div>
 
-<% @users.each do |user| %>
+<div class='box'>
+    <h3><%= link_to('View Matches', matches_path(@current_user)) %></h3>
+    <% @users_all.each do |user| %>
+      <%= image_tag(user.image, :class => "px48") %>
+    <% end %>
+</div>
+
+<% @users1.each do |user| %>
   <div class='box'>
-    <h3><%= link_to(user.firstname, user_path(user)) %></h3>
-    <%= image_tag(user.image, :class => "thumb") %>
+    <h3><%= link_to(User.find(user.user2_id).firstname, user_path(user.user2_id)) %></h3>
+    <%= image_tag(User.find(user.user2_id).image, :class => "4") %>
+    <%= link_to('Continue Chat', chat_path(user), :class => 'match') %>
   </div>
 <% end %>
 
+<% @users2.each do |user| %>
+  <div class='box'>
+    <h3><%= link_to(User.find(user.user1_id).firstname, user_path(user.user1_id)) %></h3>
+    <%= image_tag(User.find(user.user1_id).image, :class => "thumb") %>
+    <%= link_to('Continue Chat', chat_path(user), :class => 'match') %>
+  </div>
+<% end %>

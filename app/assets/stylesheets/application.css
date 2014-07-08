@@ -66,6 +66,12 @@ img {
   max-height: 480px;
 }
 
+.px48 {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+}
+
 .sign {
   max-height: 96px;
   max-width: 96px;
