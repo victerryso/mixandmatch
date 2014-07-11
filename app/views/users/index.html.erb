@@ -2,7 +2,7 @@
 
 <div class='box'>
   <h3>Today's Horoscope</h3>
-  <%= image_tag('http://www.compatible-astrology.com/image-files/' + @current_user.astro.sign.downcase + '1.gif', :class => 'sign') %>
+  <%= image_tag(@astro_image, :class => 'sign') %>
   <p><%= @current_user.astro.dailyfeed %></p>
 </div>
 
@@ -16,7 +16,7 @@
 <% @users1.each do |user| %>
   <div class='box'>
     <h3><%= link_to(User.find(user.user2_id).firstname, user_path(user.user2_id)) %></h3>
-    <%= image_tag(User.find(user.user2_id).image, :class => "4") %>
+    <%= image_tag(User.find(user.user2_id).image, :class => "thumb") %>
     <%= link_to('Continue Chat', chat_path(user), :class => 'match') %>
   </div>
 <% end %>
