@@ -1,4 +1,13 @@
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+== Mix and Match
+
+Mix and Match is an online dating service which uses horoscopes to pair people up.
+
+http://mixandmatchz.herokuapp.com
+
+Framework:  Ruby on Rails
+
+Gems: BCrypt, HTTParty, Zodiac
+
+APIs: Google Maps, Google Places, Yahoo Astrology Pipe
+
+Features: Chat System, Daily Horoscope, Matching System, Suggestions for Dates
